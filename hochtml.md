@@ -1,0 +1,135 @@
+# Ngôn ngữ đánh dấu siêu văn bản HTML
+
+- Cấu tạo bởi các thẻ
+- Rất nhiều thẻ (Chỉ cần học khoảng 30 thẻ)
+- Các thẻ html có thể lồng vào với nhau
+
+## Cấu tạo
+
+1. Thẻ HTML đầy đủ
+
+```
+<tenthe thuoctinh1="giatri1" thuoctinh2="giatri2">Nội dung</tenthe>
+```
+
+2. Thẻ HTML tự đóng
+
+```
+<tenthe thuoctinh1="giatri1" thuoctinh2="giatri2" />
+```
+
+Trang web tra cứu thẻ html: https://htmlreference.io/
+
+## Nhóm thẻ
+
+1. Thẻ block
+
+- Luôn ở hàng mới
+- Chiều rộng mặc định bằng chiều rộng của thẻ cha
+
+2. Thẻ inline
+
+- Chiều rộng mặc định bằng với nội dung của thẻ
+- Các thẻ inline đứng cạnh nhanh sẽ nằm trên 1 hàng
+
+## Các thẻ html trong nhóm block
+
+1. Thẻ heading: Trình bày tiêu đề của trang web
+
+```
+<h1>Nội dung tiêu đề</h1>
+<h2>Nội dung tiêu đề</h2>
+<h3>Nội dung tiêu đề</h3>
+<h4>Nội dung tiêu đề</h4>
+<h5>Nội dung tiêu đề</h5>
+<h6>Nội dung tiêu đề</h6>
+```
+
+Lưu ý:
+
+- Trong 1 trang web chỉ có 1 thẻ html
+- Các thẻ heading phải tuân thủ thứ tự: h1 -> h2 -> h3 ...
+
+2. Thẻ đoạn văn
+
+```
+<p>Đoạn văn</p>
+```
+
+3. Thẻ định dạng danh sách
+
+```
+<ul>
+    <li>Danh sách 1</li>
+    <li>Danh sách 2</li>
+    <li>Danh sách 3</li>
+    <li>Danh sách 4</li>
+</ul>
+```
+
+```
+<ol>
+    <li>Danh sách 1</li>
+    <li>Danh sách 2</li>
+    <li>Danh sách 3</li>
+    <li>Danh sách 4</li>
+</ol>
+```
+
+4. Thẻ trích dẫn
+
+- Trích dẫn 1 nội dung ở trang web khác
+- Trích dẫn câu nói của người nổi tiếng
+
+```
+<blockquote>
+    Nội dung
+</blockquote>
+```
+
+5. Thẻ phân chia bố cục (div)
+
+- Nhóm các thẻ html khác thành các khối
+- Chỉ có tác dụng khi chia bố cục bằng css
+
+```
+<div>
+    Các thẻ html khác
+</div>
+```
+
+6. Thẻ gạch ngang
+
+```
+<hr/>
+```
+
+## Các thẻ trong nhóm inline
+
+1. Thẻ chèn liên kết (a = anchor)
+
+```
+<a href="dia_chi_trang_web">Văn bản hiển thị</a>
+```
+
+Các thuộc tính khác:
+
+- target --> Mở nội dung trang web ở đâu?
+
+* `_self`: Tab hiện tại
+* `_target`: Tab mới
+
+- title --> Tiêu đề khi trỏ chuột
+
+2. Thẻ chèn hình ảnh (img)
+
+```
+<img src="duong-dan-anh" />
+```
+
+Các thuộc tính khác
+
+- width: Chiều rộng
+- height: Chiều cao
+- title: Tiêu đề khi trỏ chuột vào ảnh
+- alt: Văn bản thay thế khi ảnh bị lỗi
