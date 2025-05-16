@@ -133,3 +133,56 @@ Các thuộc tính khác
 - height: Chiều cao
 - title: Tiêu đề khi trỏ chuột vào ảnh
 - alt: Văn bản thay thế khi ảnh bị lỗi
+
+3. Thẻ định dạng
+
+3.1. Thẻ in đậm
+
+```
+<b>Nội dung</b>
+```
+
+3.2. Thẻ in nghiêng
+
+```
+<i>Nội dung</i>
+```
+
+3.3. Thẻ gạch chân
+
+```
+<u>Nội dung</u>
+```
+
+3.4. Thẻ gạch ngang
+
+```
+<s>Nội dung</s>
+```
+
+4. Thẻ ngắt dòng (Xuống dòng)
+
+```
+<br/>
+```
+
+5. Thẻ công thức hóa học, toán học
+
+```
+<sub>Nội dung</sub>
+```
+
+```
+<sup>Nội dung</sup>
+```
+
+6. Thẻ định dạng kiểu (span)
+
+```
+Học <span>lập trình</span> không khó
+```
+
+Đặc điểm:
+
+- Chỉ có tác dụng khi kết hợp css
+- Đảm bảo tính inline của thẻ html (Nằm trên 1 dòng)
