@@ -186,3 +186,32 @@ Học <span>lập trình</span> không khó
 
 - Chỉ có tác dụng khi kết hợp css
 - Đảm bảo tính inline của thẻ html (Nằm trên 1 dòng)
+
+## Form
+
+- Biểu mẫu cho phép người dùng nhập liệu, lựa chọn để gửi dữ liệu lên server
+- Trong 1 trang web có thể có 1 hoặc nhiều form (Các form không lồng nhau)
+- Trong 1 form = các trường nhập liệu (field) + nút gửi (submit)
+
+- Để tạo 1 form, dùng thẻ form
+
+Danh sách các trường:
+
+- input text: `<input type="text" placeholder="Mô tả" value="Nội dung mặc định"/>`
+- input email: `<input type="email" placeholder="Mô tả" value="Nội dung mặc định" />`
+- input password: `<input type="password" placeholder="Mô tả" value="Nội dung mặc định" />`
+- input number: `<input type="number" placeholder="Mô tả" value="Nội dung mặc định" />`
+- input file: `<input type="file" />`
+- input date: `<input type="date" value="Giá trị mặc định" />`
+- input radio: `<input type="radio" name="nhom" value="Giá trị"/>`
+- input checkbox: `<input type="checkbox" name="nhom" value="Giá trị"/>`
+- select:
+
+```
+<select>
+    <option value="value1">Text 1</option>
+    <option value="value2">Text 2</option>
+    <option value="value3">Text 3</option>
+    <option value="value4">Text 4</option>
+</select>
+```

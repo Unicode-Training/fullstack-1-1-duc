@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="name">Họ tên</label>
+        <input type="text" id="name" placeholder="Nhập họ và tên..." value="" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Nhập email..." value="" />
+      </div>
+      <div>
+        <label for="password">Mật khẩu</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Nhập mật khẩu..."
+          value=""
+        />
+      </div>
+      <div>
+        <label for="age">Tuổi</label>
+        <input type="number" id="age" placeholder="Nhập tuổi..." value="" />
+      </div>
+      <div>
+        <label for="avatar">Avatar</label>
+        <input type="file" id="avatar" multiple />
+      </div>
+      <div>
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" id="birthday" value="2025-05-21" />
+      </div>
+      <div>
+        <label> Giới tính </label>
+        <label>
+          <input type="radio" name="gender" value="male" checked /> Nam
+        </label>
+        <label> <input type="radio" name="gender" value="female" /> Nữ </label>
+        <label>
+          <input type="radio" name="gender" value="unknown" /> Không rõ
+        </label>
+      </div>
+      <div>
+        <label> Sở thích </label>
+        <label>
+          <input type="checkbox" name="hobby" value="Nghe nhạc" checked /> Nghe
+          nhạc
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="Nhậu" /> Nhậu
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="Xem phim" /> Xem phim
+        </label>
+      </div>
+      <div>
+        <label for="province">Tỉnh/Thành phố</label>
+        <select id="province">
+          <option value="">Chọn Tỉnh/Thành phố</option>
+          <option value="1">Hà Nội</option>
+          <option value="2" selected>Đà Nẵng</option>
+          <option value="3">Hồ Chí Minh</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Tin nhắn</label>
+        <textarea id="message" placeholder="Nhập tin nhắn..."></textarea>
+      </div>
+      <button type="submit">Gửi</button>
+      <button type="reset">Xóa</button>
+      <button type="button">Nút thông thường</button>
+    </form>
+  </body>
+</html>
