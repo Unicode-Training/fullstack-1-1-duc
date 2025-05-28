@@ -1,0 +1,13 @@
+/* .posts h2 {
+  color: red;
+}
+.products h2 {
+  color: green;
+} */
+/* .box > p {
+  color: red;
+} */
+
+.menu > li > a {
+  color: red;
+}
