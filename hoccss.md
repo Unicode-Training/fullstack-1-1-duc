@@ -126,3 +126,86 @@ selector1 > selector2 > selector3 {
  code
 }
 ```
+
+4.3. Kế thừa
+
+```
+selector1, selector2, selecto3 {
+    Code
+}
+```
+
+Ý nghĩa: các selector trên sẽ cùng 1 khối (Định dạng giống nhau)
+
+4.4. Cùng cấp (Cùng trong 1 thẻ html)
+
+```
+selector1selector2selector3 {
+    Code
+}
+```
+
+4.5. Selector ngang hàng (Anh em)
+
+```
+selector1 ~ selector2 ~ selector3 {
+    Code
+}
+```
+
+Chọn seletor nào sau 1 selector khác
+
+Điều kiện:
+
+- Phần tử được chọn và phần tử điều kiện phải ngang hàng và cuộc thuộc 1 cha
+- Phần tử được chọn phải ở phía sau
+
+  4.6. Selector ngang hàng (Liền kề)
+
+```
+selector1 + selector2 + selector3 {
+    Code
+}
+```
+
+5. Attribute Selector
+
+5.1. Chọn các thẻ html có thuộc tính
+
+```
+tenthe[tenthuoctinh] {
+    Code
+}
+```
+
+5.2. Chọn các thẻ html có thuộc tính khớp với giá trị
+
+```
+tenthe[tenthuoctinh="giatri"] {
+    Code
+}
+```
+
+5.3. Chọn các thẻ html có thuộc tính chứa giá trị bắt đầu bằng ký tự nào đó
+
+```
+tenthe[tenthuoctinh^="tukhoa"] {
+Code
+}
+```
+
+5.4. Chọn các thẻ html có thuộc tính chứa giá trị
+
+```
+tenthe[tenthuoctinh*="tukhoa"] {
+Code
+}
+```
+
+5.5. Chọn các thẻ html có thuộc tính kết bằng từ khóa nào đó
+
+```
+tenthe[tenthuoctinh$="tukhoa"] {
+Code
+}
+```

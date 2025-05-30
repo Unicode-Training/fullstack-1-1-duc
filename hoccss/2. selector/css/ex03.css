@@ -1,0 +1,43 @@
+/* .box-1 {
+  background: yellow;
+}
+.box-2 {
+  background: gray;
+}
+.box-1,
+.box-2 {
+  color: rgb(11, 74, 31);
+} */
+/* .title.title-large {
+  color: red;
+} */
+/* h2.text {
+  color: red;
+} */
+
+/* p ~ h2 {
+  color: red;
+} */
+/* .box p ~ ul li a {
+  color: red;
+} */
+
+/* h2 + h2 {
+  color: red;
+} */
+
+/* a[target] {
+  color: red;
+} */
+
+/* a[target="_blank"] {
+  color: red;
+} */
+
+/* a[title*="Unicode"] {
+  color: red;
+} */
+
+a[href$=".net"] {
+  color: red;
+}
