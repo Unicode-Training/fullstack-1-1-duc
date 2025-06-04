@@ -209,3 +209,64 @@ tenthe[tenthuoctinh$="tukhoa"] {
 Code
 }
 ```
+
+## Pseudo
+
+1. Phần tử giả (Pseudo Element)
+
+- Không có thẻ html quy định phần tử
+- Thông qua cú pháp của css
+
+Cú pháp:
+
+```css
+selector::tenphantu {
+    Code
+}
+```
+
+Danh sách các phần tử phổ biến
+
+- before --> phải có thuộc thuộc tính content
+- after --> phải có thuộc thuộc tính content
+- first-line
+- first-letter
+- placeholder
+- selection
+
+Lưu ý: before, after thuộc kiểu inline
+
+2. Lớp giả (Pseudo Class)
+
+- Thường gọi trạng thái của các thẻ html
+- Cú pháp
+
+```css
+selector:tenlop {
+    Code
+}
+```
+
+Danh sách các lớp giả
+
+- hover --> Trỏ chuột
+- active --> click và giữ chuột
+- focus --> Áp dụng trong form
+- checked --> Áp dụng radio và checkbox
+- not --> Bỏ qua selector
+- first-child --> Chọn phần tử con đầu tiên
+- last-child --> Chọn phần tử con cuối cùng
+- first-of-type --> Chọn phần tử html đầu tiên theo kiểu thẻ
+- last-of-type --> Chọn phần tử html cuối cùng theo kiểu thẻ
+- nth-child(stt) --> Chọn phần tử con theo số thứ tự
+- nth-of-type(stt) --> Chọn phần tử theo số thứ tự (Cùng kiểu)
+  Lưu ý: Với nth-child, nth-of-type có thể kết hợp với hằng số n để xử lý các bài toán phức tạp
+  Ví dụ:
+
+```css
+:nth-child(2n + 2) {
+    Code
+}
+```
+
+- valid

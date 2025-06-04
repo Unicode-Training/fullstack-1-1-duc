@@ -1,0 +1,64 @@
+/* .title {
+  color: red;
+}
+.title:hover {
+  color: green;
+}
+.title:active {
+  color: blueviolet;
+} */
+/* button:active {
+  background: blueviolet;
+} */
+/* button:focus {
+  background: green;
+}
+input:focus {
+  background: yellow;
+}
+input:focus::placeholder {
+  color: red;
+} */
+/* .checkbox input:checked ~ span {
+  color: red;
+}
+.checkbox:not(.active) span {
+  color: blueviolet;
+} */
+/* ul li:first-of-type {
+  color: red;
+}
+ul li:last-of-type {
+  color: green;
+} */
+/* ul li:nth-of-type(2) {
+  color: red;
+}
+ul li:nth-of-type(5) {
+  color: red;
+} */
+/* ul li:nth-child(3n + 3) {
+  color: red;
+} */
+
+/* ul li:nth-child(odd) {
+  color: red;
+} */
+
+/* input:valid ~ span {
+  color: red;
+} */
+
+#green:checked ~ .nav label:nth-child(1),
+#green:checked ~ .content {
+  color: green;
+}
+
+#blue:checked ~ .nav label:nth-child(2),
+#blue:checked ~ .content {
+  color: blue;
+}
+#red:checked ~ .nav label:nth-child(3),
+#red:checked ~ .content {
+  color: red;
+}
