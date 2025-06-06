@@ -1,0 +1,44 @@
+/* .content {
+  color: rgb(19 82 10);
+}
+h1 {
+  color: red;
+}
+h2 {
+  color: rgba(255, 0, 0, 0.581);
+} */
+html {
+  font-size: 20px;
+}
+body {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+}
+/* .box {
+  font-size: 1.2em;
+}
+p {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+h1 {
+  text-decoration: none;
+}
+h2 {
+  text-transform: none;
+  letter-spacing: 0px;
+  word-spacing: 5px;
+} */
+p {
+  font-weight: 700;
+  font-style: italic;
+  text-align: justify;
+}
+.todo-list li input:checked + span {
+  color: red;
+  text-decoration: line-through;
+  font-style: italic;
+}
+.todo-list li:nth-child(odd) input:checked + span {
+  font-weight: 700;
+}

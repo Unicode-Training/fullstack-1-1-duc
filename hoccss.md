@@ -270,3 +270,55 @@ Danh sách các lớp giả
 ```
 
 - valid
+
+## Các đơn vị trong CSS
+
+1. Đơn vị tuyệt đối
+
+- px (Điểm ảnh trên màn hình)
+
+2. Đơn vị tương đối
+
+- em --> Tỷ lệ theo font-size của thẻ cha
+- rem --> Tỷ lệ theo font-size của mặc định trình duyệt
+- %
+- vw
+- vh
+
+## Thuộc tính định dạng văn bản
+
+- color: mamau|tenmau ==> Thay đổi màu của văn bản
+- font-size: cochu+donvi ==> Thay đổi cỡ chữ của văn bản
+- line-height: tyle ==> Thay đổi chiều cao của dòng văn bản (Tỷ lệ với font-size của chính nó)
+- font-family: tenfont1, tenfont2,... ==> Thay đổi font chữ cho văn bản
+- text-decoration: none|underline|overline|line-through ==> Thêm các đường gạch ngang trong văn bản
+- text-transform: none|uppercase|lowercase|captialize --> Chữ hoa, chữ thường
+- letter-spacing: Tạo khoảng cách giữa các ký tự
+- word-spacing: Tạo khoảng cách giữa các từ
+- font-weight: Thiết lập đồ dày cho văn bản (Phụ thuộc vào font chữ)
+
+* Các giá trị số từ 100 đến 900 (Bội số của 100)
+* normal (Mặc định, tương đương 400)
+* bold (Tương đương với 700)
+
+- font-style: Thiết lập chữ ngiêng
+
+* normal: Mặc định
+* italic: Nghiêng
+
+- text-align: Thiết lập vị trí của văn bản (Căn theo chiều ngang)
+
+* left
+* center
+* right
+* justify
+
+Bài tập: Dựa vào html sẵn có thực hiện các yêu cầu sau
+
+- Thay đổi html cho phù hợp với yêu cầu
+- Khi click vào tên công việc (checkbox được checked) thay đổi định dạng tên công việc như sau:
+
+* Màu đỏ
+* Gạch ngang (Giữa văn bản)
+* Chữ nghiêng
+* Nếu công việc là số lẻ --> Thêm in đậm (700)
