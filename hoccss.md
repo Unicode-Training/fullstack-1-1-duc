@@ -322,3 +322,78 @@ Bài tập: Dựa vào html sẵn có thực hiện các yêu cầu sau
 * Gạch ngang (Giữa văn bản)
 * Chữ nghiêng
 * Nếu công việc là số lẻ --> Thêm in đậm (700)
+
+## Thuộc tính background
+
+Thay đổi màu nền và hình nền của thẻ html
+
+1. background-color
+
+2. background-image
+
+3. bacground-repeat: Thiết lập lặp ảnh nền
+
+- repeat: Mặc định, lặp 2 chiều
+- repeat-x: Lặp theo trục x
+- repeat-y: Lặp theo trục y
+- no-repeat: Không lặp
+
+4. background-position: Thiết lập vị trí ảnh nền
+
+Mặc định: 0 0
+
+Giá trị đặc biệt
+
+Trục X:
+
+left ~ 0
+center ~ 50%
+right ~ 100%
+
+Trục y:
+
+top ~ 0
+center ~ 50%
+bottom ~ 100%
+
+5. background-size
+
+Mặc định: auto auto (Kích thước ảnh gốc)
+
+Giá trị đặc biệt:
+
+- cover: Tính toán để lấp đầy ảnh nền vào khung hiển thị
+- contain: Giữ nguyên tỷ lệ gốc của ảnh nền
+
+6. background-attachment
+
+- Cố định ảnh nền khi kéo thanh cuộn
+- scroll
+- fixed
+
+7. background: Tổng hợp tất cả các thuộc tính trên
+
+background: color image repeat position / size attachment
+
+## Thuộc tính border
+
+Cấu tạo của border = width + style + color
+
+- border-width
+- border-style: none | solid | dashed | dotted | double
+- border-color
+
+Cú pháp chi tiết theo cạnh
+
+- border-{side}-width
+- border-{side}-style
+- border-{side}-color
+
+side: left, top, right, bottom
+
+Cú pháp viết tắt (Gộp)
+
+- border: width style color
+- border-{side}: width style color
+
+side: left, top, right, bottom

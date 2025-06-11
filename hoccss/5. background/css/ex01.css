@@ -1,0 +1,39 @@
+/* body {
+  background-color: yellow;
+}
+h1 {
+  background-color: blueviolet;
+}
+
+p {
+  background-color: lightgreen;
+} */
+
+body {
+  /* height: 2000px; */
+  /* background-color: yellow;
+  background-image: url("https://fastly.picsum.photos/id/825/536/354.jpg?hmac=yWRkVH2MURMQEGcnu_C_Z6xR46yGpn4DiAiaW4d1WKA");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: auto auto;
+  background-attachment: fixed; */
+  /* background: yellow
+    url("https://fastly.picsum.photos/id/825/536/354.jpg?hmac=yWRkVH2MURMQEGcnu_C_Z6xR46yGpn4DiAiaW4d1WKA")
+    no-repeat 0 0 / auto auto fixed; */
+}
+
+.box {
+  background: yellow;
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+.box:hover {
+  background-image: url("https://fastly.picsum.photos/id/139/536/354.jpg?hmac=BSPzvzFE2tcDyTerRQunQ9q9IsCKuGsTNPGMUVUQ0RE");
+  background-size: cover;
+}
+.box:hover > button {
+  background: green;
+  color: #fff;
+}
