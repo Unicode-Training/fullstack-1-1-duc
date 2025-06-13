@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.box {
+  width: 400px;
+  border: 1px solid red;
+  margin: 30px auto;
+}
+ul {
+  /* list-style-position: inside;
+  list-style-type: none; */
+  list-style: square inside;
+}

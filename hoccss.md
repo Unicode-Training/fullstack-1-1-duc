@@ -397,3 +397,56 @@ Cú pháp viết tắt (Gộp)
 - border-{side}: width style color
 
 side: left, top, right, bottom
+
+## Thuộc tính border-radius
+
+- Bo góc phần tử html
+- border-radius: giatri + donvi
+
+Lưu ý: Nếu là hình vuông và giá trị >= 50% --> tạo hình tròn
+
+## Thuộc tính padding
+
+- Tạo khoảng cách giữa border và content
+- padding: value + unit
+- padding-top
+- padding-left
+- padding-right
+- padding-bottom
+
+Lưu ý:
+
+- Nếu padding dùng % sẽ tỷ lệ theo width của thẻ cha
+- padding top và bottom không khả dụng với thẻ inline --> Chuyển về block hoặc inline-block
+
+## Thuộc tính margin
+
+- Căn chỉnh lề (Ngoài border)
+- margin: value + unit
+- margin-top
+- margin-left
+- margin-right
+- margin-bottom
+
+Lưu ý:
+
+- Có giá trị âm
+- Đơn vị % tỷ lệ theo width của thẻ cha
+- Có giá trị auto
+- Nếu thẻ inline, không khả dụng margin top và bottom
+- nếu giá trị auto, bắt buộc thẻ phải là block và width nhỏ width của thẻ cha
+
+## Thuộc tính box-sizing
+
+- Thiết lập kích thước (chiều rộng, cao) theo content hay border
+- Thường tiết lập theo border (Hỗ trợ tốt cho việc chia layout)
+- Reset CSS: Reset các thuộc tính css về mặc định
+
+```css
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+```

@@ -1,0 +1,17 @@
+.box {
+  /* background: green; */
+  border-radius: 10px 20px 0 0;
+  border: 5px solid red;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  background: green;
+  border-radius: 50%;
+}
+.box-2 {
+  width: 100px;
+  height: 40px;
+  background: green;
+  border-radius: 99999px;
+}
