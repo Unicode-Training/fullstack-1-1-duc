@@ -450,3 +450,97 @@ Lưu ý:
   outline: 0;
 }
 ```
+
+## Thuộc tính display
+
+- inline: Chuyển thẻ html thành inline
+- block: Chuyển thẻ html thành block
+- inline-block:
+
+* Đảm bảo yếu tố inline: chiều rộng mặc định bằng nội dung, các thẻ nằm trên 1 dòng
+* Đảm bảo yếu tố block: chỉnh được width, height, padding-top, padding-bottom, margin-top, margin-bottom
+
+- none: Ẩn nội dung (Mất không gian)
+
+## Thuộc tính visibility
+
+- visible --> Hiển thị
+- hidden --> Ẩn (Không làm mất không gian)
+
+## Thuộc tính opacity
+
+- Nhận các giá trị từ 0 đến 1
+- Làm mờ nội dung (Không phải ẩn)
+
+## Flex
+
+- Kỹ thuật css giúp chia bố cục trang web linh hoạt
+- 2 phần:
+
+* Flex container
+* Flex item
+
+### Các thuộc tính trong nhóm flex container
+
+1. display
+
+- flex
+- inline-flex
+
+==> Kích hoạt flex
+
+2. flex-direction: Chọn hướng cho trục chính
+
+- row (Mặc định)
+- row-reverse: Nằm ngang đảo ngược
+- column: Thẳng đứng
+- column-reverse: Thẳng đứng, đảo ngược
+
+3. justify-content: Căn chỉnh các item theo hướng song song với trục chính
+
+- flex-start
+- center
+- flex-end
+- space-around
+- space-between
+- space-evenly
+
+4. align-items: Căn chỉnh các item theo hướng song song với trục cross
+
+- stretch
+- flex-start
+- center
+- flex-end
+
+5. flex-wrap: Wrap các item
+
+- nowrap
+- wrap
+- wrap-reverse
+
+6. gap: Căn chỉnh khoảng cách giữa các item
+
+### Các thuộc tính trong nhóm flex item
+
+1. flex-grow
+
+- Kéo dãn kích thước các item để lập đầy khoảng trống của container
+- Nhận giá trị số (nguyên, thực)
+- Mặc định = 0
+
+2. flex-shrink
+
+- Tự đông co lại khi tổng kích thước các item vượt quá container
+- Giá trị mặc định = 1
+
+3. flex-basis
+
+- Thiết lập kích thước mặc định cho item
+
+4. flex
+
+flex: grow shrink basis
+
+5. order
+
+Sắp xếp thứ tự các item

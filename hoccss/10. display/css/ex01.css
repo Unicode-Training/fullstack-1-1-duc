@@ -1,0 +1,9 @@
+h2 {
+  display: inline-block;
+}
+.box {
+  border: 1px solid red;
+  /* display: none; */
+  /* visibility: hidden; */
+  opacity: 0;
+}
