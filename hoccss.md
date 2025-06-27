@@ -544,3 +544,21 @@ flex: grow shrink basis
 5. order
 
 Sắp xếp thứ tự các item
+
+## Position
+
+- Thay đổi vị trí của thẻ html
+- Các loại:
+
+* Tương đối
+* Tuyệt đối
+* Cố định
+
+- Thuộc tính
+
+* position: static|relative|absolute|fixed
+* top
+* left
+* right
+* bottom
+* z-index
