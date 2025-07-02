@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.modal .modal-dialog {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  z-index: 1;
+}
+.modal .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0000007f;
+}

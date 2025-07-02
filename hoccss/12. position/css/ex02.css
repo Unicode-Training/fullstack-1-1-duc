@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-family: "Asap", sans-serif;
+}
+.cover {
+  position: relative;
+}
+.cover > img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+.cover .cover-inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.cover .logo {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+.cover .info {
+  color: #fff;
+}
+.cover .info .meta {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.cover .info .meta span {
+  font-size: 1.7rem;
+}
+.cover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000068;
+}
