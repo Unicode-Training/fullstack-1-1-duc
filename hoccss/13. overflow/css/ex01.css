@@ -1,0 +1,16 @@
+/*
+Xử lý nội dung bên trong bị tràn
+
+overflow: visible|hidden|scroll|auto
+overflow-x: Áp dụng với trục x
+overflow-y: Áp dụng với trục y
+*/
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+  overflow: auto;
+}
+.box p {
+  width: 400px;
+}

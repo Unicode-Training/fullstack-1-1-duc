@@ -1,0 +1,17 @@
+.box {
+  width: 500px;
+  height: 400px;
+  border: 1px solid red;
+}
+.box h2 {
+  /* transition-property: padding-left;
+  transition-duration: 2s; */
+  /* transition-delay: 1s; */
+  /* transition-timing-function: linear; */
+  transition: 2s 1s linear;
+  transition-property: padding-left, color;
+}
+.box:hover h2 {
+  padding-left: 100px;
+  color: red;
+}

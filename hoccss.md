@@ -562,3 +562,31 @@ Sắp xếp thứ tự các item
 * right
 * bottom
 * z-index
+
+## Transition
+
+- Thuộc tính cho phép tạo hiệu ứng chuyển động
+- Chỉ áp dụng với các thuộc tính css có giá trị là số (Bao gồm cả màu)
+
+Các thuộc tính
+
+1. transition-property: Khai báo các thuộc tính css mà muốn áp dụng transition
+
+- Lưu ý: Có thể áp dụng nhiều thuộc tính css (Mỗi thuộc tính cách nhau bởi dấu ,)
+- Nếu muốn áp dụng tất cả thì dùng all
+
+2. transition-duration: Quy định thời gian chuyển động (đơn vị: s, ms)
+
+3. transition-delay: Thời gian chờ trước khi hiệu ứng chuyển động (s, ms)
+
+4. transition-timing-function: Quy ước tốc độ di chuyển
+
+- ease (Mặc định): Chậm, nhanh, chậm
+- ease-in: Chậm, nhanh
+- ease-out: Nhanh, chậm
+- ease-in-out: Chậm, nhanh, chậm
+- linear: Đều
+
+5. transition
+
+transition: property duration delay timing
