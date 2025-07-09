@@ -1,0 +1,25 @@
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: green;
+  transition: all 0.4s ease;
+}
+.box:hover span {
+  /* transform: rotateY(180deg); */
+  /* transform: scaleY(1.5); */
+  /* transform: skew(30deg, 30deg); */
+  /* transform: skewY(30deg); */
+  /* transform: translateY(-100px); */
+  transform: rotate(30deg) translate(100px) scale(1.5);
+  /* transform: skew(30deg); */
+}

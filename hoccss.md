@@ -590,3 +590,37 @@ Các thuộc tính
 5. transition
 
 transition: property duration delay timing
+
+## Transform
+
+- Thay đổi hình dạng ban đầu của thẻ html
+- Bao gồm:
+
+* Xoay
+* Nghiêng
+* Phóng to, thu nhỏ
+* Di chuyển
+
+1. Xoay
+
+- transform: rotate(angle)
+- transform: rotateX(angle)
+- transform: rotateY(angle)
+
+2. Phóng to, thu nhỏ
+
+- transform: scale(valueX, valueY)
+- transform: scaleX(value)
+- transform: scaleY(value)
+
+3. Nghiêng
+
+- transform: skew(angleX, angleY)
+- transform: skewX(value)
+- transform: skewY(value)
+
+4. Di chuyển
+
+- transform: translate(x, y)
+- transform: translateX(value)
+- transform: translateY(value)
