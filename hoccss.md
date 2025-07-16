@@ -624,3 +624,47 @@ transition: property duration delay timing
 - transform: translate(x, y)
 - transform: translateX(value)
 - transform: translateY(value)
+
+## Responsive
+
+- Dùng css để thay đổi giao diện web dựa theo kích thước màn hình
+- Các điểm kích thước gọi là breakpoint
+- Danh sách các điểm phổ biến
+
+* 1400px
+* 1200px
+* 992px
+* 768px
+* 576px
+
+```css
+@media screen and (max-width: 1399.98px) {
+  Selector {
+    thuoctinh: giatri;
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  Selector {
+    thuoctinh: giatri;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  Selector {
+    thuoctinh: giatri;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  Selector {
+    thuoctinh: giatri;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  Selector {
+    thuoctinh: giatri;
+  }
+}
+```
