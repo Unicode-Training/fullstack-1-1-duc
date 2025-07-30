@@ -668,3 +668,44 @@ transition: property duration delay timing
   }
 }
 ```
+
+## Animation
+
+- Xác định frame
+- Xác định: thời gian chạy, thời gian trễ, tốc độ,...
+
+```css
+@keyframes ten-hieu-ung {
+  from {
+    Thuộc tính css
+  }
+
+  part2% {
+    Thuộc tính css
+  }
+
+  part3% {
+    Thuộc tính css
+  }
+
+  partn%... {
+    Thuộc tính css
+  }
+
+  to {
+    Thuộc tính css
+  }
+}
+```
+
+- from: 0%
+- to: 100%
+- %: Tỷ lệ với tổng thời gian hoàn thành hiệu ứng
+
+Thuộc tính animation
+
+- animation-name: ten-hieu-ung
+- animation-duration: thoigian (s, ms)
+- animation-delay: thoigian (s, ms)
+- animation-timing-function: giống transition
+- animation-iteration-count: Số lần chạy lại hiệu ứng (Mặc định là 1, nếu muốn chạy vô hạn để giá trị infinite)

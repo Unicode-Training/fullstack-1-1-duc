@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  border: 5px solid gray;
+  margin: 30px auto;
+  position: relative;
+  border-radius: 50%;
+  animation-name: circle;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 5px solid;
+  border-color: yellow transparent transparent transparent;
+  border-radius: 50%;
+}
+@keyframes circle {
+  to {
+    transform: rotate(360deg);
+  }
+}
