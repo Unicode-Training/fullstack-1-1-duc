@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <header class="bg-[#efefef] py-3">
+      <div class="px-[15px] xl:px-0 flex max-w-[1200px] mx-auto">
+        <div>
+          <a href="#">
+            <img
+              src="https://online.unicode.vn/frontend/assets/img/logo.png"
+              alt=""
+              class="w-[200px]"
+            />
+          </a>
+        </div>
+        <div class="ml-auto flex items-center gap-10">
+          <input
+            type="checkbox"
+            hidden
+            id="menu-toggle"
+            class="checked:[&+ul]:translate-x-0 checked:[&~.overlay]:opacity-100 checked:[&~.overlay]:visible"
+          />
+          <ul
+            class="lg:flex lg:gap-5 lg:items-center h-full fixed bg-[#333] text-white top-0 left-0 z-999 min-w-[200px] p-5 lg:static lg:text-inherit lg:bg-transparent lg:min-w-0 lg:p-0 transition-[translate] duration-200 translate-x-[-100%] lg:translate-x-0 ease-[ease]"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-3 lg:py-0 hover:text-amber-700 active:text-amber-700"
+                >Trang chủ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-3 lg:py-0 hover:text-amber-700 active:text-amber-700"
+                >Giới thiệu</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-3 lg:py-0 hover:text-amber-700 active:text-amber-700"
+                >Sản phẩm</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-3 lg:py-0 hover:text-amber-700 active:text-amber-700"
+                >Dịch vụ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-3 lg:py-0 hover:text-amber-700 active:text-amber-700"
+                >Liên hệ</a
+              >
+            </li>
+          </ul>
+          <label
+            for="menu-toggle"
+            class="overlay fixed inset-0 bg-black/50 z-99 opacity-0 invisible lg:visible lg:opacity-100 lg:hidden transition-[opacity,visibility] duration-200 ease-[ease]"
+          ></label>
+          <div class="login-btn">
+            <a
+              href="#"
+              class="block px-10 py-1 bg-orange-700 text-white rounded-full hover:bg-amber-400"
+              >Login</a
+            >
+          </div>
+          <label
+            for="menu-toggle"
+            class="w-[30px] flex flex-col gap-2 lg:hidden"
+          >
+            <span class="block h-[3px] bg-[#333]"></span>
+            <span class="block h-[3px] bg-[#333]"></span>
+            <span class="block h-[3px] bg-[#333]"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+    <div class="py-3">
+      <form class="w-[400px] mx-auto">
+        <h2 class="text-center text-3xl">Login</h2>
+        <div class="mb-3">
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Email..."
+            class="w-full py-2 px-3 border"
+          />
+        </div>
+        <div class="mb-3">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Password..."
+            class="w-full py-2 px-3 border"
+          />
+        </div>
+        <button
+          class="w-full py-2 px-3 bg-orange-700 text-white cursor-pointer hover:bg-amber-600"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

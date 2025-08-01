@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <h1
+      class="text-[28px] text-[blueviolet] font-[600] hover:text-red-700 active:text-green-950 before:content-['A'] before:text-red-700 after:content-[''] after:block after:h-[2px] after:bg-[blueviolet] hover:after:bg-[blue] hover:after:h-[4px] italic text-center mt-[30px]"
+    >
+      Học Tailwind không khó
+    </h1>
+    <ul
+      class="w-[400px] mx-auto border list-disc list-inside p-5 [&>li>a]:text-[red]"
+    >
+      <li><a href="#">Item 1</a></li>
+      <li class="item hover:[&>ul]:block">
+        <a href="#">Item 2</a>
+        <ul class="list-disc list-inside ml-3 hidden">
+          <li><a href="#">Item 2.1</a></li>
+          <li><a href="#">Item 2.2</a></li>
+          <li><a href="#">Item 2.3</a></li>
+        </ul>
+      </li>
+      <li class="item hover:[&>ul]:block">
+        <a href="#">Item 3</a>
+        <ul class="list-disc list-inside ml-3 hidden">
+          <li><a href="#">Item 2.1</a></li>
+          <li><a href="#">Item 2.2</a></li>
+          <li><a href="#">Item 2.3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 4</a></li>
+    </ul>
+  </body>
+</html>
