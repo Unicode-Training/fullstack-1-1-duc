@@ -62,25 +62,61 @@
 // - Số nguyên
 // - > 1
 // - Chỉ chia hết cho 1 và chính nó
-let n = 49;
-let isPrime = true; //Giả định n là số nguyên tố
-if (n % 1 !== 0 || n <= 1) {
-  isPrime = false;
-} else {
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) {
-      isPrime = false;
-      break;
-    }
-  }
-}
+// let n = 49;
+// let isPrime = true; //Giả định n là số nguyên tố
+// if (n % 1 !== 0 || n <= 1) {
+//   isPrime = false;
+// } else {
+//   for (let i = 2; i < n; i++) {
+//     if (n % i === 0) {
+//       isPrime = false;
+//       break;
+//     }
+//   }
+// }
 
-if (isPrime) {
-  console.log(`${n} là số nguyên tố`);
-} else {
-  console.log(`${n} không phải số nguyên tố`);
-}
+// if (isPrime) {
+//   console.log(`${n} là số nguyên tố`);
+// } else {
+//   console.log(`${n} không phải số nguyên tố`);
+// }
 
 //Kỹ thuật đặt cờ hiệu (Cắm cờ)
 
 //5278 --> 8725
+
+// for (let i = 1; i <= 5; i++) {
+//   for (let j = 1; j <= 5; j++) {
+//     console.log(`i = ${i}, j = ${j}`);
+//   }
+// }
+
+// let n = 10;
+// let output = "";
+// for (let i = 1; i <= n; i++) {
+//   for (let j = 1; j <= i; j++) {
+//     output += "* ";
+//   }
+//   output += "<br/>";
+// }
+// document.body.innerHTML = output;
+
+let html = `<table border="1" cellpadding="0" cellspacing="0">`;
+
+//Logic
+for (let i = 1; i <= 8; i++) {
+  html += `<tr>`;
+  for (let j = 1; j <= 8; j++) {
+    // let total = i + j;
+    // html += `<td class="${total % 2 !== 0 ? "black" : ""}"></td>`;
+    let attrs = "";
+    if ((i % 2 !== 0 && j % 2 === 0) || (i % 2 === 0 && j % 2 !== 0)) {
+      attrs = `class="black"`;
+    }
+    html += `<td ${attrs}></td>`;
+  }
+  html += `</tr>`;
+}
+
+html += `</table>`;
+document.body.innerHTML = html;
