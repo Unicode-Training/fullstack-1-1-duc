@@ -43,7 +43,8 @@
 
 // console.log(str.lastIndexOf("An"));
 
-//6. includes(sub_string) --> Tìm chuỗi trong chuỗi cha, trả về true / false
+//.  chuỗi cha.      chuỗi con
+//6. string.includes(sub_string) --> Tìm chuỗi con trong chuỗi cha, trả về true / false
 
 // let str = "Hoàng An Hoàng An Unicode";
 // console.log(str.includes("Unicode1"));
@@ -95,3 +96,77 @@
 // - Có ít nhất 1 ký tự thường
 // - Có ít nhất 1 ký tự số
 // - Có ít nhất 1 ký tự đặc biệt: !@#$%^&*()
+
+// "!@#$%^&*".includes("$")
+// const symbol = "!@#$%^&*"
+// const char = "$"
+
+// const password = "hoangan@123";
+// const symbol = "!@#$%^&*";
+// const number = "1234567890";
+// let isLength = false;
+// let countUpper = 0;
+// let isLower = false;
+// let isNumber = false;
+// let isSymbol = false;
+
+// // Check mật khẩu có lớn hơn 8 ký tự không
+// if (password.length >= 8) {
+//   isLength = true;
+//   // Nếu có, thì lặp qua từng ký tự và check các điều kiện tiếp theo
+//   for (let i = 0; i < password.length; i++) {
+//     const char = password[i];
+//     // console.log(`-----Lần check thứ ${i + 1} check chữ ${char}-----`);
+//     // Lặp qua các ký tự, check các điều kiện
+
+//     // Chữ {char} có trong khoản A-Z không?
+//     if (char >= "A" && char <= "Z") {
+//       isUpper = true;
+//       //   console.log("Có trong A-Z trong chữ: " + char);
+//     } else {
+//       //   console.log("Không phải từ A-Z trong chữ: " + char);
+//     }
+
+//     // Chữ {char} có trong khoản a-z không?
+//     if (char >= "a" && char <= "z") {
+//       isLower = true;
+//       //   console.log("Có trong a-z trong chữ: " + char);
+//     } else {
+//       //   console.log("Không phải từ a-z trong chữ: " + char);
+//     }
+
+//     // Chữ {char} có trong biến {number} không?
+//     if (number.includes(char)) {
+//       isNumber = true;
+//       //   console.log("Chữ: " + char + " Có bao gồm trong: " + number);
+//     } else {
+//       //   console.log("Chữ: " + char + " Không bao gồm trong: " + number);
+//     }
+
+//     // Chữ {char} có trong biến {symbol} không?
+//     if (symbol.includes(char)) {
+//       isSymbol = true;
+//       //   console.log("Chữ: " + char + " Có bao gồm trong: " + number);
+//     } else {
+//       //   console.log("Chữ: " + char + " Không bao gồm trong: " + symbol);
+//     }
+//     // console.log(`-----Hết lần check thứ ${i + 1} check chữ ${char}-----`);
+//   }
+// } else {
+//   console.log("Không đủ 8 ký tự trở lên");
+// }
+
+// if (isLength && isNumber && isUpper && isLower && isSymbol) {
+//   console.log("Mật khẩu mạnh");
+// } else {
+//   console.log("Mật khẩu yếu");
+// }
+
+let fullname = "tạ hoàng an"; //Tạ hoàng an
+
+const firstChar = fullname[0];
+
+const secondString = fullname.slice(1);
+
+fullname = firstChar.toUpperCase() + secondString;
+console.log(fullname);
