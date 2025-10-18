@@ -143,8 +143,8 @@
 // queryString = queryString.slice(0, -1).replaceAll(" ", "+");
 // console.log(queryString);
 
-const queryString =
-  "keyword=Fullstack+JavaScript&status=active&category=1&category=2";
+// const queryString =
+//   "keyword=Fullstack+JavaScript&category=3&status=active&category=1&category=2";
 
 /*
 {
@@ -153,3 +153,106 @@ const queryString =
     category: [1,2]
 }
 */
+
+// const queryArr = queryString.split("&");
+// const query = {};
+// queryArr.forEach((item) => {
+//   const items = item.split("=");
+//   const key = items[0];
+//   const value = items[1].replaceAll("+", " ");
+//   if (query[key]) {
+//     if (!Array.isArray(query[key])) {
+//       query[key] = [query[key], value];
+//     } else {
+//       query[key].push(value);
+//     }
+//   } else {
+//     query[key] = value;
+//   }
+// });
+// console.log(query);
+
+// Cho trước mảng sau
+
+const students = [
+  { name: "Lan", scores: [8, 9, 7] },
+  { name: "Huy", scores: [6, 5, 7] },
+  { name: "Minh", scores: [9, 8, 10] },
+];
+
+// Yêu cầu:
+
+// - Tính điểm trung bình của từng học sinh.
+
+// - Trả về danh sách học sinh đạt loại giỏi (điểm TB >= 8).
+
+// - Sắp xếp học sinh theo điểm trung bình giảm dần.
+
+//1:
+/*
+[
+  { name: "Lan", scores: [8, 9, 7], avgScore: 1 },
+  { name: "Huy", scores: [6, 5, 7], avgScore: 2 },
+  { name: "Minh", scores: [9, 8, 10], avgScore: 3 },
+]
+*/
+// const newStudents = students.map((student) => {
+//   const studentClone = Object.assign({}, student);
+//   const avg =
+//     studentClone.scores.reduce((acc, cur) => {
+//       return acc + cur;
+//     }, 0) / studentClone.scores.length;
+//   studentClone.avg = avg;
+//   return studentClone;
+// });
+// console.log(newStudents);
+
+// const studentsAvg = newStudents.filter((student) => {
+//   return student.avg >= 8;
+// });
+// console.log(studentsAvg);
+
+// const sortStudents = newStudents.sort((a, b) => {
+//   return b.avg - a.avg;
+// });
+// console.log(sortStudents);
+
+//Bài tiếp
+const posts = [
+  {
+    id: 1,
+    title: "JavaScript cơ bản",
+    tags: ["js", "basic"],
+    comments: [
+      { user: "An", text: "Hay quá!" },
+      { user: "Bình", text: "Rất dễ hiểu" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Học React không khó",
+    tags: ["react", "js"],
+    comments: [{ user: "Chi", text: "Cảm ơn chia sẻ" }],
+  },
+];
+
+/*
+- In ra tất cả title kèm số lượng comments của từng bài viết.
+
+[
+  {title: "", commentCount: 1},
+  {title: "", commentCount: 1},
+]
+
+- Tạo mảng mới chứa tất cả tags (không trùng lặp).
+*/
+
+const tags = [];
+posts.forEach((post) => {
+  post.tags.forEach((tag) => {
+    if (!tags.includes(tag)) {
+      tags.push(tag);
+    }
+  });
+});
+console.log(tags);
