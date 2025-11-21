@@ -5,41 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      .border-error {
+        @apply border border-[red];
+      }
+    </style>
   </head>
   <body class="h-screen bg-[blueviolet] flex items-center justify-center">
     <form class="w-[450px] bg-white p-10 rounded-xl">
       <h1 class="font-bold text-3xl mb-3">Create a new account</h1>
-      <div class="mb-3">
+      <div class="mb-3 relative">
         <label class="font-bold block mb-1">Username</label>
         <input
           type="text"
           class="username w-full border border-[#ddd] px-3 py-2 outline-none rounded-sm"
           placeholder="Username..."
         />
+        <span class="error-username text-red-600 text-sm"></span>
+        <img
+          src="./images/error-svgrepo-com.svg"
+          class="icon-username-error w-[20px] absolute bottom-[48%] translate-y-1/2 right-2 hidden"
+        />
+        <img
+          src="./images/success-filled-svgrepo-com.svg"
+          class="icon-username-success w-[20px] absolute bottom-[0] -translate-y-1/2 right-2 hidden"
+        />
       </div>
-      <div class="mb-3">
+      <div class="mb-3 relative">
         <label class="font-bold block mb-1">Email</label>
         <input
           type="email"
           class="email w-full border border-[#ddd] px-3 py-2 outline-none rounded-sm"
           placeholder="Email..."
         />
+        <span class="error-email text-red-600 text-sm"></span>
+        <img
+          src="./images/error-svgrepo-com.svg"
+          class="icon-email-error w-[20px] absolute bottom-[48%] translate-y-1/2 right-2 hidden"
+        />
+        <img
+          src="./images/success-filled-svgrepo-com.svg"
+          class="icon-email-success w-[20px] absolute bottom-[0] -translate-y-1/2 right-2 hidden"
+        />
       </div>
-      <div class="mb-3">
+      <div class="mb-3 relative">
         <label class="font-bold block mb-1">Password</label>
         <input
           type="password"
           class="password w-full border border-[#ddd] px-3 py-2 outline-none rounded-sm"
           placeholder="Password..."
         />
+        <span class="error-password text-red-600 text-sm"></span>
+        <img
+          src="./images/error-svgrepo-com.svg"
+          class="icon-password-error w-[20px] absolute bottom-[48%] translate-y-1/2 right-2 hidden"
+        />
+        <img
+          src="./images/success-filled-svgrepo-com.svg"
+          class="icon-password-success w-[20px] absolute bottom-[0] -translate-y-1/2 right-2 hidden"
+        />
       </div>
-      <div class="mb-3">
+      <div class="mb-3 relative">
         <label class="font-bold block mb-1">Password Confirmation </label>
         <input
           type="password"
-          class="confirm-password w-full border border-[#ddd] px-3 py-2 outline-none rounded-sm"
+          class="confirmPassword w-full border border-[#ddd] px-3 py-2 outline-none rounded-sm"
           placeholder="Password Confirmation
 ..."
+        />
+        <span class="error-confirmPassword text-red-600 text-sm"></span>
+        <img
+          src="./images/error-svgrepo-com.svg"
+          class="icon-confirmPassword-error w-[20px] absolute bottom-[48%] translate-y-1/2 right-2 hidden"
+        />
+        <img
+          src="./images/success-filled-svgrepo-com.svg"
+          class="icon-confirmPassword-success w-[20px] absolute bottom-[0] -translate-y-1/2 right-2 hidden"
         />
       </div>
       <button
