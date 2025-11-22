@@ -8,14 +8,26 @@
       button {
         position: absolute;
         cursor: move;
+        z-index: 100;
+        border: 4px solid green;
       }
       .box {
-        border: 4px dashed red;
+        border: 8px dashed red;
         width: 200px;
         height: 200px;
         position: absolute;
-        bottom: 5%;
-        right: 5%;
+        bottom: 10%;
+        right: 10%;
+      }
+      .box.drag {
+        background: yellow;
+      }
+      .box.drop {
+        background: goldenrod;
+      }
+      .transition {
+        transition: 0.3s ease;
+        transition-property: top, left;
       }
     </style>
   </head>
