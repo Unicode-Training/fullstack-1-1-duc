@@ -25,6 +25,21 @@
       .down {
         cursor: pointer;
       }
+      .selected {
+        border: 1px dashed green;
+      }
+      .menu {
+        width: 100px;
+        height: auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        position: absolute;
+        background: #fff;
+        display: none;
+      }
+      .menu.show {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -55,6 +70,7 @@
         <span class="down">Down</span>
       </li>
     </ul>
+    <div class="menu">Lorem ipsum dolor sit amet</div>
     <script src="js/ex11.js"></script>
   </body>
 </html>
