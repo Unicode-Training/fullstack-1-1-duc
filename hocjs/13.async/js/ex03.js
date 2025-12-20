@@ -96,18 +96,111 @@
 // };
 // getSalary();
 
-const myPromise = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve({
-      getData: () => new Promise((resolve) => resolve("Unicode")),
-    });
-  }, 1000);
-});
+// const myPromise = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve({
+//       getData: () => new Promise((resolve) => resolve("Unicode")),
+//     });
+//   }, 1000);
+// });
 
-const displayData = async () => {
-  //Dùng await --> hiển thị ra chữ "Unicode"
-  const result = await myPromise;
-  const data = await result.getData();
-  console.log(data);
+// const displayData = async () => {
+//   //Dùng await --> hiển thị ra chữ "Unicode"
+//   const result = await myPromise;
+//   const data = await result.getData();
+//   console.log(data);
+// };
+// displayData();
+
+/**
+ * Lấy danh sách các tỉnh/thành phố
+ * @returns {Promise} Danh sách các tỉnh/thành phố
+ */
+const getProvince = () => {
+  return new Promise((resolve, reject) => {
+    const provinceAPI = `https://provinces.open-api.vn/api/v2/p/`;
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", provinceAPI);
+    xhr.send();
+    /**
+     * Xử lý khi đã nhận được dữ liệu từ server
+     * @function
+     * @param {Event} event - Sự kiện khi đã nhận được dữ liệu
+     */
+    xhr.onload = function () {
+      const data = JSON.parse(xhr.responseText);
+      resolve(data);
+    };
+    /**
+     * Xử lý khi có lỗi xảy ra trong quá trình request
+     * @function
+     * @throws {string} Lỗi xảy ra trong quá trình request
+     */
+    xhr.onerror = function () {
+      reject("Error while request province");
+    };
+  });
 };
-displayData();
+/**
+ * Lấy danh sách các xã/phường theo tỉnh/thành phố
+ * @param {number} provinceId - Mã tỉnh/thành phố
+ * @returns {Promise} Danh sách các xã/phường
+ */
+const getWard = (provinceId) => {
+  return new Promise((resolve, reject) => {
+    const wardApi = `https://provinces.open-api.vn/api/v2/w/?province=${provinceId}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", wardApi);
+    xhr.send();
+    /**
+     * Xử lý khi đã nhận được dữ liệu từ server
+     * @function
+     * @param {object} event - Sự kiện khi đã nhận được dữ liệu
+     * @property {string} event.target.responseText - Dữ liệu nhận được từ server
+     */
+    xhr.onload = function () {
+      const data = JSON.parse(xhr.responseText);
+      resolve(data);
+    };
+    /**
+     * Xử lý khi có lỗi xảy ra trong quá trình request
+     * @throws {string} Lỗi xảy ra trong quá trình request
+     */
+    xhr.onerror = function () {
+      reject("Error while request ward");
+    };
+  });
+};
+
+const displayProvince = async () => {
+  try {
+    const provinces = await getProvince();
+    const provinceEl = document.querySelector("#province");
+    let html = `<option value="">Chọn Tỉnh/Thành phố</option>`;
+    provinces.forEach((item) => {
+      html += `<option value="${item.code}">${item.name}</option>`;
+    });
+    provinceEl.innerHTML = html;
+  } catch (error) {
+    const errorEl = document.querySelector(".error");
+    errorEl.innerText = error;
+  }
+};
+displayProvince();
+
+const provinceEl = document.querySelector("#province");
+provinceEl.addEventListener("change", async () => {
+  try {
+    const provinceId = provinceEl.value;
+    const wards = await getWard(provinceId);
+    const wardEl = document.querySelector("#ward");
+    let html = `<option value="">Chọn Xã/Phường</option>`;
+    wards.forEach((item) => {
+      html += `<option value="${item.code}">${item.name}</option>`;
+    });
+    wardEl.innerHTML = html;
+  } catch (error) {
+    const errorEl = document.querySelector(".error");
+    errorEl.innerText = error;
+  }
+});
