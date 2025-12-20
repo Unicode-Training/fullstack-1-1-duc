@@ -37,7 +37,42 @@
         background: #fff;
         display: none;
       }
+      .menu p {
+        margin: 0;
+        padding: 5px;
+        cursor: pointer;
+      }
+      .menu p:hover {
+        background: yellow;
+      }
       .menu.show {
+        display: block;
+      }
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        right: 0;
+        max-width: 60%;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        z-index: 100;
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: #0000008e;
+        z-index: 99;
+      }
+      .modal-dialog {
+        display: none;
+      }
+      .modal-dialog.show {
         display: block;
       }
     </style>
@@ -45,32 +80,42 @@
   <body>
     <ul>
       <li>
-        Item 1
+        <span class="text">Item 1</span>
         <span class="up">Up</span>
         <span class="down">Down</span>
       </li>
       <li>
-        Item 2
+        <span class="text">Item 2</span>
         <span class="up">Up</span>
         <span class="down">Down</span>
       </li>
       <li>
-        Item 3
+        <span class="text">Item 3</span>
         <span class="up">Up</span>
         <span class="down">Down</span>
       </li>
       <li>
-        Item 4
+        <span class="text">Item 4</span>
         <span class="up">Up</span>
         <span class="down">Down</span>
       </li>
       <li>
-        Item 5
+        <span class="text">Item 5</span>
         <span class="up">Up</span>
         <span class="down">Down</span>
       </li>
     </ul>
-    <div class="menu">Lorem ipsum dolor sit amet</div>
+    <div class="menu">
+      <p class="rename-item">Đổi tên</p>
+      <p class="delete-item">Xóa</p>
+    </div>
+    <div class="modal-dialog">
+      <div class="modal">
+        <input type="text" />
+        <button>Lưu</button>
+      </div>
+      <div class="overlay"></div>
+    </div>
     <script src="js/ex11.js"></script>
   </body>
 </html>
