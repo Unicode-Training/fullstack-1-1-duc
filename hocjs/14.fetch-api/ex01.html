@@ -35,76 +35,25 @@
             Cũ nhất
           </button>
         </div>
-
-        <div class="js-post-list space-y-5">
-          <!-- <div class="border rounded-md p-5">
-            <h2 class="text-lg font-bold mb-2">
-              The majestic waterfall thundered down the mountainside
-            </h2>
-            <p class="text-gray-600 mb-4">
-              Its waters cascading in a frothy torrent, sending mist into the
-              air. Rainbows danced in the spray, adding to the spectacle of
-              nature's power...
-            </p>
-
-            <div class="flex justify-between items-center">
-              <button
-                class="border rounded-full px-4 py-1 hover:bg-gray-100 transition"
-              >
-                Xem chi tiết
-              </button>
-              <div class="space-x-2">
-                <button class="text-gray-600 hover:underline">Sửa</button>
-                <button class="text-red-500 hover:underline">Xóa</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="border rounded-md p-5">
-            <h2 class="text-lg font-bold mb-2">
-              The peaceful village square was a gathering place for locals
-            </h2>
-            <p class="text-gray-600 mb-4">
-              Beneath the shade of a towering oak tree, villagers gathered to
-              chat and share stories...
-            </p>
-
-            <div class="flex justify-between items-center">
-              <button
-                class="border rounded-full px-4 py-1 hover:bg-gray-100 transition"
-              >
-                Xem chi tiết
-              </button>
-              <div class="space-x-2">
-                <button class="text-gray-600 hover:underline">Sửa</button>
-                <button class="text-red-500 hover:underline">Xóa</button>
-              </div>
-            </div>
-          </div>
-          <div class="border rounded-md p-5">
-            <h2 class="text-lg font-bold mb-2">
-              The ancient temple stood as a testament to human ingenuity
-            </h2>
-            <p class="text-gray-600 mb-4">
-              Its intricate carvings and towering columns spoke of a time when
-              gods walked among mortals...
-            </p>
-
-            <div class="flex justify-between items-center">
-              <button
-                class="border rounded-full px-4 py-1 hover:bg-gray-100 transition"
-              >
-                Xem chi tiết
-              </button>
-              <div class="space-x-2">
-                <button class="text-gray-600 hover:underline">Sửa</button>
-                <button class="text-red-500 hover:underline">Xóa</button>
-              </div>
-            </div>
-          </div> -->
-        </div>
+        <div class="js-post-list space-y-5"></div>
+        <div class="js-loading"></div>
+        <div class="js-error"></div>
       </div>
     </main>
+    <div class="js-modal hidden">
+      <div
+        class="max-w-[90%] mx-auto p-3 fixed left-0 right-0 top-10 bg-white border-[1px] border-gray-300 rounded-lg z-100"
+      >
+        <h2 class="text-2xl mb-3 border-b-[1px] border-gray-200 pb-2"></h2>
+        <p></p>
+      </div>
+      <div class="js-overlay bg-[#0008] fixed inset-0 z-50"></div>
+      <div
+        class="js-close-btn fixed left-2 top-2 z-60 bg-[#00000054] w-[30px] h-[30px] flex justify-center items-center text-xl rounded-full text-white cursor-pointer hover:bg-[#00000034] pb-1"
+      >
+        &times;
+      </div>
+    </div>
     <script src="js/ex01.js"></script>
   </body>
 </html>

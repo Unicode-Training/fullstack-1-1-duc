@@ -78,29 +78,7 @@ const BASE_URL = `http://localhost:3000`;
 const app = {
   render(data) {
     const postListEl = document.querySelector(".js-post-list");
-    // let output = "";
-    // data.forEach((value) => {
-    //   output += `<div class="border rounded-md p-5">
-    //         <h2 class="text-lg font-bold mb-2">
-    //           ${value.title}
-    //         </h2>
-    //         <p class="text-gray-600 mb-4">
-    //           ${value.content}
-    //         </p>
 
-    //         <div class="flex justify-between items-center">
-    //           <button
-    //             class="border rounded-full px-4 py-1 hover:bg-gray-100 transition"
-    //           >
-    //             Xem chi tiết
-    //           </button>
-    //           <div class="space-x-2">
-    //             <button class="text-gray-600 hover:underline">Sửa</button>
-    //             <button class="text-red-500 hover:underline">Xóa</button>
-    //           </div>
-    //         </div>
-    //       </div>`;
-    // });
     let output = data
       .map(
         (value) => `<div class="border rounded-md p-5">
@@ -114,6 +92,7 @@ const app = {
             <div class="flex justify-between items-center">
               <button
                 class="border rounded-full px-4 py-1 hover:bg-gray-100 transition"
+                data-id="${value.id}"
               >
                 Xem chi tiết
               </button>
@@ -127,12 +106,72 @@ const app = {
       .join("");
 
     postListEl.innerHTML = output;
+    const btnList = postListEl.querySelectorAll("button");
+    const modalEl = document.querySelector(".js-modal");
+    const closeBtnEl = modalEl.querySelector(".js-close-btn");
+    const overlayEl = modalEl.querySelector(".js-overlay");
+    const resetModal = () => {
+      const h2 = modalEl.querySelector("h2");
+      const p = modalEl.querySelector("p");
+      h2.innerText = "";
+      p.innerText = "";
+    };
+    btnList.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        modalEl.classList.remove("hidden");
+        const id = btn.dataset.id;
+        const h2 = modalEl.querySelector("h2");
+        const p = modalEl.querySelector("p");
+        h2.innerText = "Loading title...";
+        p.innerText = "Loading content...";
+        const post = await this.getPost(id);
+        h2.innerText = post.title;
+        p.innerText = post.content;
+      });
+    });
+    closeBtnEl.addEventListener("click", () => {
+      modalEl.classList.add("hidden");
+      resetModal();
+    });
+    overlayEl.addEventListener("click", () => {
+      modalEl.classList.add("hidden");
+      resetModal();
+    });
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "Escape") {
+        modalEl.classList.add("hidden");
+        resetModal();
+      }
+    });
+  },
+  renderLoading(show = true) {
+    const loadingEl = document.querySelector(".js-loading");
+    loadingEl.innerHTML = show
+      ? `<span class="text-3xl text-center">Loading...</span>`
+      : "";
+  },
+  renderError(msg, show = true) {
+    const errorEl = document.querySelector(".js-error");
+    errorEl.innerHTML = show
+      ? `<span class="text-3xl text-center text-red-600">Error: ${msg}</span>`
+      : "";
+  },
+  async getPost(id) {
+    const response = await fetch(`${BASE_URL}/posts/${id}`);
+    return response.json();
   },
   async getPosts() {
     //Call api
-    const response = await fetch(`${BASE_URL}/posts`);
-    const data = await response.json();
-    this.render(data);
+    try {
+      this.renderLoading(true);
+      const response = await fetch(`${BASE_URL}/posts`);
+      const data = await response.json();
+      this.render(data);
+    } catch (error) {
+      this.renderError(error.message, true);
+    } finally {
+      this.renderLoading(false);
+    }
   },
   start() {
     this.getPosts();
