@@ -76,6 +76,13 @@ const BASE_URL = `http://localhost:3000`;
 
 //Blog
 const app = {
+  query: {
+    currentPage: 1,
+    keyword: "",
+    sort: "id",
+    order: "desc", //asc tăng dần
+  },
+  currentPost: null,
   render(data) {
     const postListEl = document.querySelector(".js-post-list");
 
@@ -206,6 +213,9 @@ const app = {
             }
             modalEl.classList.add("hidden");
             resetModal();
+            if (this.currentPost === 1) {
+              this.query.currentPage--;
+            }
             this.getPosts();
           });
         }
@@ -252,6 +262,7 @@ const app = {
           resetModal();
 
           //Gọi lại dữ liệu
+          this.query.currentPage = 1;
           this.getPosts();
         } else {
           alert("Đã có lỗi xảy ra khi thêm");
@@ -286,17 +297,49 @@ const app = {
       ? `<span class="text-3xl text-center text-red-600">Error: ${msg}</span>`
       : "";
   },
+  renderPaginate(totalPages) {
+    const paginateEl = document.querySelector(".js-paginate");
+    let html = "";
+    for (let i = 1; i <= totalPages; i++) {
+      let active = i === this.query.currentPage ? "bg-green-600" : "";
+      html += `<button
+            class="border border-[#ddd] px-3 py-1 cursor-pointer hover:bg-green-600 ${active}"
+          >
+            ${i}
+          </button>`;
+    }
+    paginateEl.innerHTML = html;
+
+    const btnList = paginateEl.querySelectorAll("button");
+    btnList.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const page = btn.innerText;
+        this.query.currentPage = +page;
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        });
+        this.getPosts();
+      });
+    });
+  },
   async getPost(id) {
     const response = await fetch(`${BASE_URL}/posts/${id}`);
     return response.json();
   },
-  async getPosts(keyword = "") {
+  async getPosts() {
     //Call api
     try {
       this.renderLoading(true);
-      const response = await fetch(`${BASE_URL}/posts?q=${keyword}`);
+      const response = await fetch(
+        `${BASE_URL}/posts?q=${this.query.keyword}&_page=${this.query.currentPage}&_limit=3&_sort=${this.query.sort}&_order=${this.query.order}`
+      );
       const data = await response.json();
+      const total = response.headers.get("x-total-count");
+      const totalPages = Math.ceil(total / 3);
+      this.renderPaginate(totalPages);
       this.render(data);
+      this.currentPost = data.length;
     } catch (error) {
       this.renderError(error.message, true);
     } finally {
@@ -359,7 +402,9 @@ const app = {
       }
       id = setTimeout(() => {
         const q = e.target.value;
-        this.getPosts(q);
+        this.query.keyword = q;
+        this.query.currentPage = 1;
+        this.getPosts();
       }, 500);
     });
   },
