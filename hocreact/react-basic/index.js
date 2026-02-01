@@ -88,51 +88,140 @@ const todos = [
 // - Để tạo state trong component, dùng hàm đặc biệt React.useState() (Gọi là Hook)
 // - State không được phép thay đổi trực tiếp mà phải thông qua hàm thay đổi của nó
 
-const Message = () => {
-  const [message, setMessage] = React.useState("Hello Message");
+// const Message = () => {
+//   const [message, setMessage] = React.useState("Hello Message");
+//   const [value, setValue] = React.useState("");
+//   const handleClick = () => {
+//     //event handler
+//     setMessage(`Đức`);
+//   };
+//   const handleChange = (e) => {
+//     setValue(e.target.value);
+//   };
+
+//   return (
+//     <div>
+//       <h3>{message}</h3>
+//       <input placeholder="Nhập gì đó..." onChange={handleChange} />
+//       <button onClick={handleClick}>Change Message</button>
+//       <p>Value: {value}</p>
+//     </div>
+//   );
+// };
+
+const TodoList = () => {
+  const [todoList, setTodoList] = React.useState([
+    "Item 1",
+    "Item 2",
+    "Item 3",
+  ]);
   const [value, setValue] = React.useState("");
-  const handleClick = () => {
-    //event handler
-    setMessage(`Đức`);
+  const [msg, setMsg] = React.useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!value) {
+      setMsg("Vui lòng nhập");
+    } else {
+      setTodoList([...todoList, value]);
+      setMsg("");
+      setValue("");
+    }
   };
   const handleChange = (e) => {
     setValue(e.target.value);
   };
+  const handleRemove = (index) => {
+    /*
+    [
+      "Item 1",
+      "Item 2",  --> index = 1
+      "Item 3",
+    ]
 
+    setTodoList([
+      "Item 1",
+      "Item 3",
+  ])    
+    */
+
+    // const newArr = todoList.filter((todo, i) => i !== index);
+    const newArr = [...todoList];
+    newArr.splice(index, 1);
+    setTodoList(newArr);
+  };
   return (
     <div>
-      <h3>{message}</h3>
-      <input placeholder="Nhập gì đó..." onChange={handleChange} />
-      <button onClick={handleClick}>Change Message</button>
-      <p>Value: {value}</p>
+      <h1>Todo App</h1>
+      <ul>
+        {todoList.map((todo, index) => (
+          <li key={index}>
+            {todo} <button onClick={() => handleRemove(index)}>&times;</button>
+          </li>
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Nhập tên công việc..."
+          onChange={handleChange}
+          value={value}
+        />
+        <button>Thêm</button>
+      </form>
+      {msg && <span style={{ color: "red" }}>{msg}</span>}
     </div>
+  );
+};
+
+const Items = () => {
+  const [items, setItems] = React.useState([
+    {
+      title: "Item 1",
+      detail: "Content 1",
+    },
+    {
+      title: "Item 2",
+      detail: "Content 2",
+    },
+    {
+      title: "Item 3",
+      detail: "Content 3",
+    },
+    {
+      title: "Item 4",
+      detail: "Content 4",
+    },
+  ]);
+  const [currentIndex, setCurrentIndex] = React.useState();
+  const handleShow = (index) => {
+    if (currentIndex === index) {
+      setCurrentIndex(currentIndex === undefined ? index : undefined);
+      //Logic toggle
+      console.log("Đây là logic toggle vì cùng bấm vào 1 nút");
+    } else {
+      setCurrentIndex(index);
+    }
+  };
+  console.log(currentIndex);
+
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>
+          {item.title}{" "}
+          <button onClick={() => handleShow(index)}>
+            {currentIndex === index ? "Hide" : "Show"}
+          </button>
+          {index === currentIndex && <div>{item.detail}</div>}
+        </li>
+      ))}
+    </ul>
   );
 };
 
 const jsx = (
   <div>
-    <Message />
-    {/* {doSomething()} */}
-    {/* <User /> */}
-    {/* <h2 className={`title ${isLogin ? "auth" : ""}`}>Hello</h2>
-    <h3>{title}</h3>
-    {text}
-    {isLogin && <h3>Chào bạn 1</h3>} */}
-    {/* {isLogin ? <h3>Chào bạn</h3> : <h4>Mày không có quyền</h4>} */}
-    {/* {isLogin || <h3>Chào bạn 2</h3>}
-    <button onClick={handleClick}>Click me</button>
-    {users.map((user, index) => (
-      <h3 key={index}>{user}</h3>
-    ))}
-    <ul>
-      {todos.map((value) => (
-        <li key={value.id}>
-          {value.title}
-          <span>{value.completed ? "Completed" : "Incomplete"}</span>
-          <button onClick={() => handleRemove(value.id)}>&times;</button>
-        </li>
-      ))}
-    </ul> */}
+    <Items />
   </div>
 );
 
