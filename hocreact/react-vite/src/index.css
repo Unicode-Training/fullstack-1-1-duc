@@ -1,0 +1,43 @@
+.modal-dialog {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  max-width: 70%;
+  margin-inline: auto;
+  background: #fff;
+  border: 1px solid #efefef;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: #00000087;
+  z-index: 99;
+}
+
+.modal .close {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 150;
+  font-size: 1.5rem;
+  background: rgb(54, 54, 54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.active {
+  border-color: red !important;
+}
+.disable-scroll {
+  overflow: hidden;
+}
