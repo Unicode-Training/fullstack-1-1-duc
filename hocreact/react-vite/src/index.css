@@ -41,3 +41,35 @@
 .disable-scroll {
   overflow: hidden;
 }
+
+.box {
+  display: flex;
+  gap: 10px;
+}
+.box .sidebar {
+  width: 220px;
+  background: #efefef;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.box .content {
+  flex: 1;
+}
+.box .resize-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  background: grey;
+  cursor: ew-resize;
+  opacity: 0;
+}
+.box .sidebar:hover .resize-bar {
+  opacity: 1;
+}
+
+.select-none {
+  user-select: none;
+}
