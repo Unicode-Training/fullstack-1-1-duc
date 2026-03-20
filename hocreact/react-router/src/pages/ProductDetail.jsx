@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const navigate = useNavigate();
   useEffect(() => {
     const getProduct = async () => {
       const response = await fetch(
@@ -22,6 +23,7 @@ export default function ProductDetail() {
         <img src={product.thumbnail} alt="" />
       </div>
       <div>{product.description}</div>
+      <button onClick={() => navigate(`/order/${product.id}`)}>Đặt hàng</button>
     </div>
   );
 }
