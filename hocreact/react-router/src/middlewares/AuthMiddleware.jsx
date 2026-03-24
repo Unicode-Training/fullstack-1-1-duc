@@ -1,11 +1,10 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../stores/authStore";
 
 export default function AuthMiddleware() {
-  const isAuth = localStorage.getItem("isLogin") === "1" ? true : false;
-  const location = useLocation();
-  return isAuth ? (
-    <Outlet />
-  ) : (
-    <Navigate to={`/login?continue=${location.pathname}`} />
-  );
+  const { isLoading, isAuthenticated } = useAuth();
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  return isAuthenticated ? <Outlet /> : <Navigate to={`/login`} />;
 }
