@@ -14,6 +14,8 @@ import AdminLayout from "./layouts/AdminLayout";
 import Login from "./pages/Login";
 import AuthMiddleware from "./middlewares/AuthMiddleware";
 import Order from "./pages/Order";
+import Posts from "./pages/Posts";
+import PostDetail from "./pages/PostDetail";
 export default function App() {
   return (
     <Routes>
@@ -24,6 +26,8 @@ export default function App() {
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:id" element={<PostDetail />} />
         <Route element={<AuthMiddleware />}>
           <Route path="/order/:productId" element={<Order />} />
         </Route>

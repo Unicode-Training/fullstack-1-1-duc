@@ -17,7 +17,6 @@ instance.interceptors.response.use(
     return response;
   },
   async (error) => {
-    console.dir(error);
     if (error.status === 401 && error.config.url !== "/auth/refresh-token") {
       try {
         const refreshToken = localStorage.getItem("refresh_token");
@@ -33,6 +32,7 @@ instance.interceptors.response.use(
         useAuth.getState().logout();
       }
     }
+    return Promise.reject(error);
   },
 );
 
